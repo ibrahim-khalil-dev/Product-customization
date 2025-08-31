@@ -5,260 +5,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseball Glove Customizer</title>
   </head>
-  <style>* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f5f5f5;
-  height: 100vh;
-  overflow: hidden;
-}
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #f5f5f5;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
 
-/* Left Sidebar */
-.sidebar {
-  width: 80px;
-  background-color: #f8f9fa;
-  border-right: 1px solid #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-}
+    /* Left Sidebar */
+    .sidebar {
+      width: 80px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
 
-.logo {
-  margin-bottom: 40px;
-}
+    .logo {
+      margin-bottom: 40px;
+    }
 
-.logo-circle {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #6b7280;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 6px;
-  font-weight: bold;
-  text-align: center;
-  color: #6b7280;
-  line-height: 1;
-}
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #6b7280;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 6px;
+      font-weight: bold;
+      text-align: center;
+      color: #6b7280;
+      line-height: 1;
+    }
 
-.nav-icons {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+    .nav-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 8px;
-  transition: background-color 0.2s;
-}
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
 
-.nav-item:hover {
-  background-color: #e5e7eb;
-}
+    .nav-item:hover {
+      background-color: #e5e7eb;
+    }
 
-.nav-item.active {
-  background-color: #dbeafe;
-}
+    .nav-item.active {
+      background-color: #dbeafe;
+    }
 
-.nav-item .icon {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
+    .nav-item .icon {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
 
-.nav-item span {
-  font-size: 10px;
-  color: #6b7280;
-  font-weight: 500;
-}
+    .nav-item span {
+      font-size: 10px;
+      color: #6b7280;
+      font-weight: 500;
+    }
 
-/* Main Glove Display */
-.glove-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  padding: 40px;
-}
+    /* Main Glove Display */
+    .glove-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 40px;
+    }
 
-.glove-display {
-  max-width: 500px;
-  max-height: 600px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .glove-display {
+      max-width: 500px;
+      max-height: 600px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-#glove-svg {
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 500px;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1));
-}
+    #glove-svg {
+      width: 100%;
+      height: 100%;
+      max-width: 400px;
+      max-height: 500px;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1));
+    }
 
-#glove-svg symbol {
-  overflow: visible;
-}
+    #glove-svg symbol {
+      overflow: visible;
+    }
 
-#glove-svg use {
-  overflow: visible;
-}
+    #glove-svg use {
+      overflow: visible;
+    }
 
-#glove-svg path {
-  transition: fill 0.3s ease;
-}
+    #glove-svg path {
+      transition: fill 0.3s ease;
+    }
 
-.shell-back-color {
-  fill: #8fbc8f;
-  transition: fill 0.3s ease;
-}
+    .shell-back-color {
+      fill: #8fbc8f;
+      transition: fill 0.3s ease;
+    }
 
-.shell-palm-color {
-  fill: #8fbc8f;
-  transition: fill 0.3s ease;
-}
+    .shell-palm-color {
+      fill: #8fbc8f;
+      transition: fill 0.3s ease;
+    }
 
-.glove-details {
-  fill: #8b4513;
-  transition: fill 0.3s ease;
-}
+    .glove-details {
+      fill: #8b4513;
+      transition: fill 0.3s ease;
+    }
 
-/* Right Color Panel */
-.color-panel {
-  width: 320px;
-  background-color: #ffffff;
-  border-left: 1px solid #e5e7eb;
-  padding: 30px 25px;
-  overflow-y: auto;
-}
+    /* Right Color Panel */
+    .color-panel {
+      width: 320px;
+      background-color: #ffffff;
+      border-left: 1px solid #e5e7eb;
+      padding: 30px 25px;
+      overflow-y: auto;
+    }
 
-.color-section {
-  margin-bottom: 40px;
-}
+    .color-section {
+      margin-bottom: 40px;
+    }
 
-.color-section h3 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 20px;
-  text-align: center;
-}
+    .color-section h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-.color-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-bottom: 15px;
-}
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 15px;
+    }
 
-.color-swatch {
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .color-swatch {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.color-swatch:hover {
-  transform: scale(1.05);
-  border-color: #9ca3af;
-}
+    .color-swatch:hover {
+      transform: scale(1.05);
+      border-color: #9ca3af;
+    }
 
-.color-swatch.selected {
-  border-color: #ef4444;
-  border-width: 3px;
-  transform: scale(1.1);
-}
+    .color-swatch.selected {
+      border-color: #ef4444;
+      border-width: 3px;
+      transform: scale(1.1);
+    }
 
-.checkmark {
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
+    .checkmark {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
 
-.color-swatch.selected .checkmark {
-  opacity: 1;
-}
+    .color-swatch.selected .checkmark {
+      opacity: 1;
+    }
 
-.color-name {
-  text-align: center;
-  font-size: 14px;
-  color: #6b7280;
-  font-weight: 500;
-}
+    .color-name {
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 500;
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
 
-  .sidebar {
-    width: 100%;
-    height: 80px;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 20px;
-  }
+      .sidebar {
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 20px;
+      }
 
-  .nav-icons {
-    flex-direction: row;
-    gap: 20px;
-  }
+      .nav-icons {
+        flex-direction: row;
+        gap: 20px;
+      }
 
-  .color-panel {
-    width: 100%;
-    height: 300px;
-    border-left: none;
-    border-top: 1px solid #e5e7eb;
-  }
+      .color-panel {
+        width: 100%;
+        height: 300px;
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+      }
 
-  .glove-container {
-    flex: 1;
-    padding: 20px;
-  }
-}
-</style>
+      .glove-container {
+        flex: 1;
+        padding: 20px;
+      }
+    }
+  </style>
   <body>
-    <div class="container">     
+    <div class="container">
       <div class="sidebar">
-        <div class="logo">
-          <div class="logo-circle">
-            <span>FULL STOP</span>
-            <span>Rawlings</span>
-          </div>
-        </div>
-
         <div class="nav-icons">
           <div class="nav-item active">
             <div class="icon">🌐</div>
@@ -279,7 +273,6 @@ body {
         </div>
       </div>
 
-    
       <div class="glove-container">
         <div class="glove-display">
           <svg
@@ -310,7 +303,6 @@ body {
                   d="M17.55 6.94a.8.8 0 0 1-.24.09 1.35 1.35 0 0 0-1 .68c-.24.32-.46.66-.67 1a3 3 0 0 0-.14.42c-.23.43-.49.85-.71 1.29s-.42.94-.63 1.41c-.06.15-.1.3-.17.45s-.09.08-.13.12l-.06-.05.32-1.12c-.19.14-.35.28-.53.39s-.55 0-.56-.34a.8.8 0 0 1 0-.27 5 5 0 0 1 1.74-2.45 2.3 2.3 0 0 1 .54-.2.4.4 0 0 0 .19-.1c.2-.27.4-.54.58-.82a1.59 1.59 0 0 1 1.13-.74 4 4 0 0 0 .42-.16v-.06c-.16-.06-.32-.1-.47-.17a1.3 1.3 0 0 1-.35-.19.33.33 0 0 1-.08-.46A1 1 0 0 1 18 5.14a1.39 1.39 0 0 1 1 1 1.41 1.41 0 0 1-1 1.51.42.42 0 0 1-.48-.41q.015-.12.03-.3m-4.1 4a1.59 1.59 0 0 1 1-1c-.29-.36-.14-.65.08-.92s.33-.29.49-.21.16.28.12.45-.14.5-.14.74a8 8 0 0 0 .44-.86 1.8 1.8 0 0 0 0-.4.21.21 0 0 0-.29-.21 3 3 0 0 0-.61.36 4.5 4.5 0 0 0-1.2 1.68 1.9 1.9 0 0 0-.12.71c0 .24.13.31.34.18a10 10 0 0 0 .82-.61l-.32.09.13-.58ZM18 6.59c-.14.37-.07.57.2.62a.54.54 0 0 0 .52-.21.74.74 0 0 0-.09-1 1.84 1.84 0 0 0-1-.52 1.1 1.1 0 0 0-.45 0 .32.32 0 0 0-.18.22s.07.15.14.18a3.5 3.5 0 0 0 .45.18 4.5 4.5 0 0 1 .6.25.4.4 0 0 1 .18.57Zm-3.69 3.93.07.05c.07-.05.17-.09.21-.17a3 3 0 0 0 .32-.63 1.3 1.3 0 0 0 0-.56c0-.11-.09-.21-.22-.14a.24.24 0 0 0-.15.31 1 1 0 0 0 .09.14.49.49 0 0 1 0 .69L14.5 10h-.06Z"
                 />
 
-                More detailed paths for complete glove structure
                 <path
                   class="glove-details"
                   d="M30.55 9l-.1.1c-.79 1.08-1.57 2.16-2.36 3.22a60 60 0 0 1-5 5.9c-.93 1-1.87 1.92-2.83 2.85-1.43 1.4-2.89 2.78-4.33 4.17-.24.22-.48.44-.73.69l1.25.64.36-.64c.25.11.5.2.73.33a.46.46 0 0 0 .66-.09s.09-.05.14-.08v.05l-.23.21c0 .07-.23.12 0 .24l.39-.32v.05c-.07.17-.27.24-.38.39l.68 1.22.42-.3v.06l-.25.23c-.17.13-.17.13-.09.25l.45-.33.06.06-.52.44 1.69 1.22c.3-.33.58-.66.89-1l5.17-5.15c1.31-1.33 2.62-2.66 3.9-4 .68-.72 1.32-1.49 2-2.24s1.36-1.62 2-2.44l1-1.22L34 11.87l-.16.13v-.31l-.19.11v-.26c-.33-.32-.67-.62-1-.93l-.37.32c0-.17.3-.25.17-.51l-.34.41-.11-.05.29-.42-.86-.71Z"
@@ -320,11 +312,9 @@ body {
             <use href="#a" />
           </svg>
         </div>
-      </div> 
+      </div>
       <div class="color-panel">
-    
         <div class="color-section">
-          <h3>Shell Back | Leather Color</h3>
           <div class="color-grid">
             <div
               class="color-swatch"
@@ -386,7 +376,6 @@ body {
           <p class="color-name">Ocean Mint</p>
         </div>
 
-        
         <div class="color-section">
           <h3>Shell Palm</h3>
           <div class="color-grid">
