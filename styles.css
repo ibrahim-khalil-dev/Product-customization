@@ -193,6 +193,10 @@
       border-width: 3px;
       transform: scale(1.1);
     }
+    .glove-icons{
+          height: 35px;
+    width: auto;
+    }
 
     .checkmark {
       color: white;
